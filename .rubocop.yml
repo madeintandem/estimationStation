@@ -1,0 +1,104 @@
+AllCops:
+  Exclude:
+    - bin/**/*
+    - ciscripts/**/*
+    - db/**/*
+    - scripts/**/*
+    - tmp/**/*
+    - vendor/**/*
+
+Rails:
+  Enabled: true
+
+Rails/InverseOf:
+  Enabled: false
+
+Rails/TimeZone:
+  Enabled: false
+
+Rails/UnknownEnv:
+  Environments:
+    - development
+    - test
+    - staging
+    - smoketest
+    - prod
+
+Rails/UniqBeforePluck:
+  Enabled: false
+
+Rails/Delegate:
+  Enabled: false
+
+Layout/AlignParameters:
+  Enabled: false
+
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+
+Lint/UnusedMethodArgument:
+  Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false
+
+Metrics/BlockLength:
+  Enabled: false
+
+Metrics/ClassLength:
+  Enabled: false
+
+Metrics/CyclomaticComplexity:
+  Enabled: false
+
+Metrics/LineLength:
+  Enabled: false
+
+Metrics/MethodLength:
+  Enabled: false
+
+Metrics/ModuleLength:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
+  Enabled: true
+  Max: 10
+
+Naming/PredicateName:
+  Enabled: false
+
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+Style/DateTime:
+  Enabled: false
+
+Style/Documentation:
+  Enabled: false
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+
+Style/GuardClause:
+  Enabled: false
+
+Style/IfUnlessModifier:
+  Enabled: false
+
+Style/ModuleFunction:
+  EnforcedStyle: extend_self
+
+Style/RegexpLiteral:
+  AllowInnerSlashes: true
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/TrivialAccessors:
+  Enabled: false
+
+Lint/UnneededCopDisableDirective:
+  Enabled: false

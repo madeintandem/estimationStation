@@ -1,3 +1,4 @@
+<%= javascript_pack_tag 'react_room', 'data-turbolinks-track': 'reload' %>
 <h1><%= @room.name %></h1>
 
 <%= form_tag "/tickets", method: :post do %>
@@ -7,30 +8,4 @@
   <%= submit_tag "Create new ticket" %>
 <% end %>
 
-<div id="render-content">
-  <%= render "rooms/content" %>
-</div>
-
-<div id="vote-menu">
-  <%= render "rooms/vote_menu" %>
-</div>
-
-<script>
-  setInterval(() => {
-    window.fetch('/statuses/<%= @room.id %>').then(response => {
-      response.json().then(data => {
-        const renderTarget = document.getElementById('render-content')
-        renderTarget.innerHTML = data.content
-
-        const voteTitleElement = document.getElementById('vote-title')
-        if (voteTitleElement && data.user_vote) {
-          document.getElementById('vote-menu').innerHTML = data.vote_menu
-        }
-
-        if (!voteTitleElement && data.user_vote === false) {
-          document.getElementById('vote-menu').innerHTML = data.vote_menu
-        }
-      })
-    })
-  }, 1000)
-</script>
+<div id="react-render-target"></div>
