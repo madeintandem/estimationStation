@@ -11,5 +11,17 @@
  * It is generally better to create a new file per style scope.
  *
  */
- @import "bootstrap"
+ @import "bootstrap";
 
+ .w-400 {
+  width: 400px;
+}
+
+.mw-75{
+  min-width: 75px;
+}
+
+// 
+.ml-remember-check {
+  margin-left: 1.2rem;
+}
