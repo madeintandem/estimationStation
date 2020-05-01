@@ -16,7 +16,8 @@
           <span class="navbar-text mr-2">Welcome, <%= current_user.email %>!</span>
           <%= link_to "Logout", destroy_user_session_path, method: :delete, class:"btn btn-outline-success btn-large"%>
         <% else %>
-          <%= link_to "Login", new_user_session_path, class:"btn btn-outline-success btn-large"%>
+          <%= link_to "Login", new_user_session_path, class:"btn btn-outline-success btn-large mr-2"%>
+          <%= link_to "Sign up", new_user_registration_path, class:"btn btn-outline-primary btn-large"%>
         <% end %>
       </div>
     </div>
