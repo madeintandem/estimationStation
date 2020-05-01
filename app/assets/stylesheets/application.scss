@@ -13,7 +13,7 @@
  */
  @import "bootstrap";
 
- .w-400 {
+.w-400 {
   width: 400px;
 }
 
@@ -21,7 +21,16 @@
   min-width: 75px;
 }
 
-// 
 .ml-remember-check {
   margin-left: 1.2rem;
 }
+
+.mb-0{
+  margin-bottom: 0rem;
+}
+
+.mb-05{
+  margin-bottom: 0.5rem;
+}
+
+
