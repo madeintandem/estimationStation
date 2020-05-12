@@ -10,20 +10,27 @@
   </head>
 
   <body>
-    <p class="flash_message--notice"><%= notice %></p>
-    <p class="flash_message--notice"><%= @notice %></p>
-    <p class="flash_message--alert"><%= alert %></p>
-    <p class="flash_message--alert"><%= @alert %></p>
-    <% if current_user %>
-      signed in as: <%= current_user.email %>
-      <%= link_to "log out", destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to "sign_in", new_user_session_path %>
-    <% end %>
-    <%= link_to "room index", rooms_path %>
+    <header><%= render 'layouts/navigation' %></header>
+    <div class="container mt-5">
+      <% flash.each do |type, msg| %>
+        <% if type=='notice' %>
+          <div class="alert alert-primary" role="alert">
+            <%= msg %>
+          </div>
+        <% elsif type=='alert' %>
+          <div class="alert alert-danger" role="alert">
+            <%= msg %>
+          </div>
+        <% end %>
+      <% end %>
 
-    <main>
-      <%= yield %>
-    </main>
+      <main>
+        <%= yield %>
+      </main>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
   </body>
 </html>

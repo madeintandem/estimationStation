@@ -1,11 +1,24 @@
-<%= link_to "Create a room", new_room_path %>
-
 <div>
-  <ul>
-    <% @rooms.each do |room| %>
-      <li>
-        <%= link_to room.name, room_path(room.id) %>
-      </li>
-    <% end %>
-  </ul>
+  <h2>All Rooms</h2>
+  <div>
+    <table class="table table-bordered table-hover">
+      <thead class="thead-light">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Room</th>
+          <th scope="col">Last updated</th>
+        </tr>
+      </thead>
+      <tbody>
+        <% @rooms.each do |room| %>
+          <tr>
+            <th scope="row"><%= room.id %></th>
+            <td><%= link_to room.name, room_path(room.id) %></td>
+            <td><%= Date.parse(room.updated_at.to_s) %></td>
+          </tr>
+        <% end %>
+      </tbody>
+  
+    </table>
+  </div>
 </div>

@@ -10,6 +10,27 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
+ @import "bootstrap";
+
+.w-400 {
+  width: 400px;
+}
+
+.mw-75{
+  min-width: 75px;
+}
+
+.ml-remember-check {
+  margin-left: 1.2rem;
+}
+
+.mb-0{
+  margin-bottom: 0rem;
+}
+
+.mb-05{
+  margin-bottom: 0.5rem;
+}
+
+
